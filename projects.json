@@ -1,0 +1,338 @@
+{
+  "meta": {
+    "title": "project-ideas",
+    "description": "A ranked backlog of project ideas to build, ordered by career impact.",
+    "last_updated": "2026-04-17",
+    "intro": "This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/carlosferreyra/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue."
+  },
+  "projects": [
+    {
+      "rank": 1,
+      "name": "cargo-heatmap",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "cargo", "WASM", "SVG"],
+      "career_signal": "Rust tooling ecosystem contribution — shows deep Cargo internals knowledge and open-source instincts that Big Tech infra teams actively look for.",
+      "description": "A `cargo` subcommand that profiles build times per crate and renders a browser-based SVG heatmap. Helps teams find slow dependencies at a glance. Fills a real gap in the Cargo ecosystem that developers search for regularly.",
+      "features": [
+        "Parse `cargo build --timings` JSON output",
+        "Render interactive SVG/HTML heatmap via a lightweight WASM renderer",
+        "CLI flags: `--open`, `--json`, `--threshold <ms>`"
+      ],
+      "effort": "M",
+      "related": [
+        {"label": "wsr", "url": "https://github.com/carlosferreyra/wsr", "note": "local CI runner — shares profiling motivation"}
+      ],
+      "suggested_repo": "carlosferreyra/cargo-heatmap"
+    },
+    {
+      "rank": 2,
+      "name": "wsr-cloud",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "GCP Cloud Run", "Pub/Sub", "Terraform"],
+      "career_signal": "Extends an existing shipped project with a cloud backend — demonstrates full-cycle ownership from CLI to distributed infra, directly relevant to SRE/platform roles.",
+      "description": "A cloud companion to [wsr](https://github.com/carlosferreyra/wsr) that streams CI results to a GCP-hosted dashboard in real time. Workers run on Cloud Run, results land in BigQuery, and a simple UI shows run history. Ties directly into GCP Associate Cloud Engineer cert.",
+      "features": [
+        "Rust agent that POSTs structured JSON run results to a Cloud Run endpoint",
+        "Pub/Sub fan-out → BigQuery sink via Dataflow template",
+        "Minimal Next.js or static HTML dashboard reading from BigQuery"
+      ],
+      "effort": "L",
+      "related": [
+        {"label": "wsr", "url": "https://github.com/carlosferreyra/wsr", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/wsr-cloud"
+    },
+    {
+      "rank": 3,
+      "name": "mcp-hub-registry",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["TypeScript", "Rust (indexer)", "GitHub Actions", "JSON Schema"],
+      "career_signal": "AI/MCP tooling is a hot hiring signal in 2025–2026. Maintaining a community registry positions you as an ecosystem contributor before the space matures.",
+      "description": "A machine-readable registry of MCP servers with a schema validator, auto-discovery via GitHub topic search, and a static site. Extends [mcp-hub](https://github.com/carlosferreyra/mcp-hub) into an authoritative community resource.",
+      "features": [
+        "JSON/TOML registry schema with required fields (name, transport, auth, tools)",
+        "GitHub Actions workflow that scrapes `topic:mcp-server` repos nightly and opens PRs for new entries",
+        "Static site (Astro or plain HTML) rendered from the registry"
+      ],
+      "effort": "M",
+      "related": [
+        {"label": "mcp-hub", "url": "https://github.com/carlosferreyra/mcp-hub", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/mcp-hub-registry"
+    },
+    {
+      "rank": 4,
+      "name": "difflog",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "git2-rs", "SQLite"],
+      "career_signal": "Pure Rust systems project with a daily-use story — exactly the kind of tool that gets GitHub stars organically and shows up in \"cool Rust projects\" lists.",
+      "description": "A CLI that records every `git diff` at commit time into a local SQLite database and lets you query your personal change history with ripgrep-style search. Think `git log --all` but for the actual lines you wrote.",
+      "features": [
+        "git2-rs hook installer (`post-commit`)",
+        "Incremental diff → SQLite ingestion with FTS5 full-text index",
+        "Query CLI: `difflog search <pattern>`, `difflog stats --week`"
+      ],
+      "effort": "M",
+      "related": [],
+      "suggested_repo": "carlosferreyra/difflog"
+    },
+    {
+      "rank": 5,
+      "name": "codetwin-lsp",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "LSP (tower-lsp)", "Claude API"],
+      "career_signal": "LSP projects are rare in portfolios and signal deep editor/tooling knowledge. Extending an existing shipped project (codetwin) into the editor layer is a strong narrative arc.",
+      "description": "A Language Server Protocol implementation for [codetwin](https://github.com/carlosferreyra/codetwin) that surfaces doc suggestions inline as you type. Uses the Claude API with prompt caching to minimize cost on repeated context.",
+      "features": [
+        "LSP server skeleton with `textDocument/completion` and `textDocument/hover`",
+        "Codetwin doc generation triggered on function hover",
+        "VS Code extension wrapper for distribution"
+      ],
+      "effort": "L",
+      "related": [
+        {"label": "codetwin", "url": "https://github.com/carlosferreyra/codetwin", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/codetwin-lsp"
+    },
+    {
+      "rank": 6,
+      "name": "delta-doctor",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Python", "PySpark", "Databricks SDK", "Great Expectations"],
+      "career_signal": "Directly leverages Databricks Data Engineer Associate cert. Data quality tooling is a top hiring signal for data platform roles at Big Tech.",
+      "description": "A CLI that runs health checks on Delta Lake tables (schema drift, partition skew, Z-order staleness, vacuum hygiene) and outputs a structured report. Think `cargo check` for Delta tables.",
+      "features": [
+        "Databricks SDK–based table inspector (statistics, history, properties)",
+        "Rule engine: configurable checks in TOML",
+        "Output modes: `--json`, `--html`, GitHub Actions summary annotation"
+      ],
+      "effort": "M",
+      "related": [
+        {"label": "databricks-certification", "url": "https://github.com/carlosferreyra/databricks-certification", "note": null},
+        {"label": "data-engineering", "url": "https://github.com/carlosferreyra/data-engineering", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/delta-doctor"
+    },
+    {
+      "rank": 7,
+      "name": "interview-ready-cli",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "Claude API", "SQLite"],
+      "career_signal": "Meta/Google interviewers value candidates who build their own prep tooling — it shows initiative and shipping instinct. Public repo gets organic traffic from job seekers.",
+      "description": "A TUI-based coding interview trainer that pulls problems from a local SQLite bank, times your solution, and uses Claude to critique it with a \"would this pass FAANG review?\" rubric. Extends [interview-ready](https://github.com/carlosferreyra/interview-ready) from a notes repo into an interactive tool.",
+      "features": [
+        "Problem bank TOML schema + seed data (LC-style problems with tags)",
+        "Ratatui TUI: problem display, timer, code editor pane",
+        "Claude API call on submit → structured feedback (correctness, time complexity, style)"
+      ],
+      "effort": "L",
+      "related": [
+        {"label": "interview-ready", "url": "https://github.com/carlosferreyra/interview-ready", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/interview-ready-cli"
+    },
+    {
+      "rank": 8,
+      "name": "llm-prices",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["TypeScript", "GitHub Actions", "JSON"],
+      "career_signal": "High organic search traffic (\"LLM pricing comparison\"), low build effort, and demonstrates awareness of the AI ecosystem — good conversation starter in interviews.",
+      "description": "A tiny GitHub repo that maintains a machine-readable JSON/YAML file of LLM model pricing (input/output tokens, context window, rate limits) updated weekly by a GitHub Actions scraper. Companion to [llm-knowledge-cutoff-dates](https://github.com/carlosferreyra/llm-knowledge-cutoff-dates).",
+      "features": [
+        "Schema: provider → model → {input_price, output_price, context_window, updated_at}",
+        "GitHub Actions scraper that opens a PR when prices change",
+        "Rendered comparison table in README via a generation script"
+      ],
+      "effort": "S",
+      "related": [
+        {"label": "llm-knowledge-cutoff-dates", "url": "https://github.com/carlosferreyra/llm-knowledge-cutoff-dates", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/llm-prices"
+    },
+    {
+      "rank": 9,
+      "name": "pipewatch",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "tokio", "WebSocket", "htmx"],
+      "career_signal": "Real-time systems + Rust async is a rare combo in portfolios. Demonstrates tokio proficiency and full-stack thinking without heavy frontend overhead.",
+      "description": "A lightweight process monitor that tails stdout/stderr of any shell pipeline and streams it live to a browser via WebSocket. Like `tail -f` with a browser UI and structured log filtering.",
+      "features": [
+        "Rust binary that spawns a child process and captures its streams",
+        "WebSocket server (tokio-tungstenite) broadcasting structured log lines",
+        "Single-file htmx frontend with filter/search and ANSI color support"
+      ],
+      "effort": "M",
+      "related": [],
+      "suggested_repo": "carlosferreyra/pipewatch"
+    },
+    {
+      "rank": 10,
+      "name": "awesome-uvx",
+      "status": "in-progress",
+      "repo_url": "https://github.com/carlosferreyra/awesome-uvx",
+      "stack": ["Python", "uv", "Markdown", "GitHub Actions"],
+      "career_signal": "Being the go-to curator for a fast-growing tool (uv) builds mindshare before the ecosystem saturates. Awesome lists consistently rank well in search.",
+      "description": "A curated list of tools and recipes for running Python scripts via `uvx` without a virtualenv. Already started — needs regular updates, a contribution guide, and a CI badge checker.",
+      "features": [
+        "CI link checker (GitHub Actions)",
+        "Category taxonomy: dev tools, data science, AI/LLM, system utilities",
+        "Weekly auto-PR from a scraper of `uv`-compatible PyPI packages"
+      ],
+      "effort": "S",
+      "related": [
+        {"label": "awesome-uvx", "url": "https://github.com/carlosferreyra/awesome-uvx", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/awesome-uvx"
+    },
+    {
+      "rank": 11,
+      "name": "marimo-hub",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Python", "marimo", "Databricks", "GitHub Actions"],
+      "career_signal": "Marimo is gaining traction fast. Being an early ecosystem contributor (notebook gallery, component library) creates durable visibility.",
+      "description": "A gallery of reusable marimo notebook templates for common data engineering patterns (ingestion, EDA, Delta Lake ops, ML feature pipelines). Each template is a runnable `.py` file with parameterized inputs.",
+      "features": [
+        "Template schema: metadata frontmatter (tags, stack, runtime requirements)",
+        "GitHub Actions CI that runs each template against a mock dataset",
+        "Static gallery site rendered from template metadata"
+      ],
+      "effort": "M",
+      "related": [
+        {"label": "marimo-notebooks", "url": "https://github.com/carlosferreyra/marimo-notebooks", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/marimo-hub"
+    },
+    {
+      "rank": 12,
+      "name": "gcp-cost-sentinel",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Python", "GCP Billing API", "Cloud Functions", "Telegram/Slack webhook"],
+      "career_signal": "FinOps awareness is a growing hiring criterion at Big Tech cloud teams. A working GCP cost alerting tool directly demonstrates GCP cert knowledge in practice.",
+      "description": "A serverless GCP Cloud Function that polls the Billing API daily, computes per-service spend deltas, and fires a Telegram or Slack alert when any service exceeds a configurable threshold. Lightweight alternative to GCP Budget Alerts for fine-grained control.",
+      "features": [
+        "Cloud Function triggered by Cloud Scheduler (daily)",
+        "Billing API client: fetch yesterday's spend by service",
+        "Alert logic: configurable thresholds per service in TOML/env"
+      ],
+      "effort": "S",
+      "related": [],
+      "suggested_repo": "carlosferreyra/gcp-cost-sentinel"
+    },
+    {
+      "rank": 13,
+      "name": "dotfiles-bootstrap",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "shell", "GitHub Actions"],
+      "career_signal": "A one-command dotfiles installer in Rust (not a bash script) is a strong flex — it's battle-tested, cross-platform, and demonstrates practical Rust beyond toy projects.",
+      "description": "A Rust binary that clones [dotfiles](https://github.com/carlosferreyra/dotfiles), resolves symlinks, installs packages via the system package manager, and sets up shell configs idempotently. Think `chezmoi` but hand-rolled and minimal.",
+      "features": [
+        "TOML manifest: packages, symlinks, post-install hooks",
+        "Idempotent installer with diff output (what changed vs. already installed)",
+        "GitHub Actions test matrix: macOS, Ubuntu"
+      ],
+      "effort": "M",
+      "related": [
+        {"label": "dotfiles", "url": "https://github.com/carlosferreyra/dotfiles", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/dotfiles-bootstrap"
+    },
+    {
+      "rank": 14,
+      "name": "schema-drift-detector",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Python", "Pydantic", "Kafka (or Pub/Sub)", "Delta Lake"],
+      "career_signal": "Schema evolution is a senior data engineer topic. A working tool here signals production readiness beyond tutorials.",
+      "description": "A lightweight daemon that subscribes to a Kafka or Pub/Sub topic, infers the JSON schema of incoming messages, and alerts when the schema diverges from a registered baseline. Stores schema history in Delta Lake.",
+      "features": [
+        "Pydantic-based schema inference from sampled messages",
+        "Schema diff engine: added/removed/type-changed fields",
+        "Alert sink: structured log, Slack webhook, or GCS file"
+      ],
+      "effort": "L",
+      "related": [
+        {"label": "data-engineering", "url": "https://github.com/carlosferreyra/data-engineering", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/schema-drift-detector"
+    },
+    {
+      "rank": 15,
+      "name": "vicode-plugins",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["TypeScript", "VS Code API", "Rust (optional native module)"],
+      "career_signal": "VS Code extension authorship is a niche skill that stands out. Extending an existing project (vicode) shows continuity of ownership.",
+      "description": "A plugin system for [vicode](https://github.com/carlosferreyra/vicode) that lets users define custom code transformation pipelines triggered by keybindings. Each plugin is a small JS/TS module with a defined input/output contract.",
+      "features": [
+        "Plugin manifest schema + loader",
+        "Built-in plugins: sort imports, extract variable, wrap in try/catch",
+        "Plugin marketplace integration (VS Code extension gallery)"
+      ],
+      "effort": "M",
+      "related": [
+        {"label": "vicode", "url": "https://github.com/carlosferreyra/vicode", "note": null}
+      ],
+      "suggested_repo": "carlosferreyra/vicode-plugins"
+    },
+    {
+      "rank": 16,
+      "name": "bench-rs",
+      "status": "idea",
+      "repo_url": null,
+      "stack": ["Rust", "criterion", "GitHub Actions", "SVG chart"],
+      "career_signal": "Benchmarking infrastructure is critical at Big Tech. A clean benchmark harness with CI-tracked regressions is the kind of thing infra interviewers notice.",
+      "description": "A reusable benchmark harness template for Rust projects that tracks performance regressions across commits using criterion and renders per-benchmark trend charts in GitHub Actions PR summaries.",
+      "features": [
+        "Criterion benchmark template with configurable sample sizes",
+        "GitHub Actions workflow: run benches on PR, compare to `main`, post summary",
+        "SVG trend chart generated from stored JSON results"
+      ],
+      "effort": "S",
+      "related": [],
+      "suggested_repo": "carlosferreyra/bench-rs"
+    }
+  ],
+  "graveyard": [
+    {
+      "name": "Rust async runtime from scratch",
+      "reason": "High learning value but near-zero open-source appeal; covered better by tokio docs."
+    },
+    {
+      "name": "Personal finance tracker",
+      "reason": "Saturated market; no Rust/data engineering angle that adds differentiation."
+    },
+    {
+      "name": "LLM fine-tuning pipeline",
+      "reason": "Requires GPU budget not practical without company resources; poor ROI for portfolio."
+    },
+    {
+      "name": "Browser extension for job tracking",
+      "reason": "TypeScript-only, no systems angle; dozens of identical tools already exist."
+    },
+    {
+      "name": "Custom Neovim distro",
+      "reason": "Dotfiles ecosystem overlap with no career signal beyond personal preference."
+    }
+  ],
+  "resources": [
+    {"label": "Awesome Rust", "url": "https://github.com/rust-unofficial/awesome-rust", "note": "gaps in this list = open opportunities"},
+    {"label": "Rust CLI Working Group", "url": "https://github.com/rust-cli/team", "note": "community context for CLI tooling"},
+    {"label": "levels.fyi open roles", "url": "https://www.levels.fyi/jobs", "note": "filter by \"infrastructure\" / \"data platform\" for signal on what skills are valued"},
+    {"label": "The Pragmatic Engineer", "url": "https://newsletter.pragmaticengineer.com/", "note": "Big Tech hiring trends"},
+    {"label": "Data Engineering Weekly", "url": "https://www.dataengineeringweekly.com/", "note": "data platform tooling landscape"},
+    {"label": "Hacker News \"Show HN\"", "url": "https://news.ycombinator.com/show", "note": "calibrate what resonates with technical audiences"},
+    {"label": "awesome-selfhosted", "url": "https://github.com/awesome-selfhosted/awesome-selfhosted", "note": "gap analysis for self-hostable tooling ideas"}
+  ]
+}

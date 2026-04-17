@@ -1,0 +1,60 @@
+# {{ meta.title }}
+
+{{ meta.description }}
+
+![GitHub Repo stars](https://img.shields.io/github/stars/carlosferreyra/project-ideas?style=flat-square)
+![Last updated](https://img.shields.io/badge/last%20updated-{{ meta.last_updated | replace("-", "--") }}-blue?style=flat-square)
+
+---
+
+## How to use this list
+
+{{ meta.intro }}
+
+---
+
+## Ranked Project Ideas
+
+---
+{% for project in projects %}
+## {{ project.rank }}. {{ project.name }}
+
+**Status:** {% if project.status == "idea" %}`idea`{% else %}~~idea~~{% endif %} {% if project.status == "in-progress" %}[`in-progress`]({{ project.repo_url }}){% else %}~~in-progress~~{% endif %} {% if project.status == "done" %}`done`{% else %}~~done~~{% endif %}
+
+**Stack:** {{ project.stack | join(", ") }}
+
+**Career signal:** {{ project.career_signal }}
+
+**Description:** {{ project.description }}
+
+**Key features to build:**
+
+{% for feature in project.features -%}
+- {{ feature }}
+{% endfor %}
+**Estimated effort:** {{ project.effort }}
+{% if project.related %}
+**Related existing work:** {% for rel in project.related %}[{{ rel.label }}]({{ rel.url }}){% if rel.note %} ({{ rel.note }}){% endif %}{% if not loop.last %}, {% endif %}{% endfor %}
+{% endif %}
+**Repo:** `{{ project.suggested_repo }}`
+
+---
+{% endfor %}
+## Idea Graveyard
+
+Ideas considered but deprioritized:
+
+| Idea | Reason deprioritized |
+| --- | --- |
+{% for item in graveyard -%}
+| **{{ item.name }}** | {{ item.reason }} |
+{% endfor %}
+---
+
+## Resources
+
+**Inspiration & signal:**
+
+{% for res in resources -%}
+- [{{ res.label }}]({{ res.url }}) — {{ res.note }}
+{% endfor %}
