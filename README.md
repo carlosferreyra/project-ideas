@@ -17,7 +17,75 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 1. cargo-heatmap
+## 1. wsr
+
+**Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/wsr) ~~done~~
+
+**Stack:** Rust, WASM, git hooks
+
+**Career signal:** A local, Wasm-sandboxed CI runner built in Rust — directly demonstrates systems programming, sandboxing, and developer tooling depth that Big Tech infra teams look for.
+
+**Description:** A local CI runner that executes git hooks inside a WASM sandbox, giving fast and reproducible pre-commit/pre-push checks without network dependencies. Currently in planning phase — architecture and core abstractions are being designed.
+
+**Key features to build:**
+
+- WASM sandbox runtime for hook execution isolation
+- Git hook lifecycle integration (pre-commit, pre-push, commit-msg)
+- TOML-based pipeline config with parallel step execution
+
+**Estimated effort:** L
+
+**Repo:** `carlosferreyra/wsr`
+
+---
+
+## 2. vicode
+
+**Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/vicode) ~~done~~
+
+**Stack:** TypeScript, VS Code API
+
+**Career signal:** VS Code extension authorship is a rare portfolio item that signals deep editor integration knowledge and TypeScript proficiency — stands out among generalist candidates.
+
+**Description:** A VS Code extension that brings opinionated code editing enhancements and custom keybinding workflows to the editor. Currently in planning phase — feature set and extension architecture are being scoped.
+
+**Key features to build:**
+
+- Custom keybinding system with configurable command palette actions
+- Code transformation pipelines triggered by user-defined shortcuts
+- Lightweight plugin interface for extending behavior without forking
+
+**Estimated effort:** M
+
+**Repo:** `carlosferreyra/vicode`
+
+---
+
+## 3. wsr-cloud
+
+**Status:** `idea` ~~in-progress~~ ~~done~~
+
+**Stack:** Rust, GCP Cloud Run, Pub/Sub, Terraform
+
+**Career signal:** Extends an existing shipped project with a cloud backend — demonstrates full-cycle ownership from CLI to distributed infra, directly relevant to SRE/platform roles.
+
+**Description:** A cloud companion to [wsr](https://github.com/carlosferreyra/wsr) (currently in-progress) that streams CI results to a GCP-hosted dashboard in real time. Workers run on Cloud Run, results land in BigQuery, and a simple UI shows run history. Ties directly into GCP Associate Cloud Engineer cert.
+
+**Key features to build:**
+
+- Rust agent that POSTs structured JSON run results to a Cloud Run endpoint
+- Pub/Sub fan-out → BigQuery sink via Dataflow template
+- Minimal Next.js or static HTML dashboard reading from BigQuery
+
+**Estimated effort:** L
+
+**Related existing work:** [wsr](https://github.com/carlosferreyra/wsr) (parent project — in-progress)
+
+**Repo:** `carlosferreyra/wsr-cloud`
+
+---
+
+## 4. cargo-heatmap
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -41,31 +109,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 2. wsr-cloud
-
-**Status:** `idea` ~~in-progress~~ ~~done~~
-
-**Stack:** Rust, GCP Cloud Run, Pub/Sub, Terraform
-
-**Career signal:** Extends an existing shipped project with a cloud backend — demonstrates full-cycle ownership from CLI to distributed infra, directly relevant to SRE/platform roles.
-
-**Description:** A cloud companion to [wsr](https://github.com/carlosferreyra/wsr) that streams CI results to a GCP-hosted dashboard in real time. Workers run on Cloud Run, results land in BigQuery, and a simple UI shows run history. Ties directly into GCP Associate Cloud Engineer cert.
-
-**Key features to build:**
-
-- Rust agent that POSTs structured JSON run results to a Cloud Run endpoint
-- Pub/Sub fan-out → BigQuery sink via Dataflow template
-- Minimal Next.js or static HTML dashboard reading from BigQuery
-
-**Estimated effort:** L
-
-**Related existing work:** [wsr](https://github.com/carlosferreyra/wsr)
-
-**Repo:** `carlosferreyra/wsr-cloud`
-
----
-
-## 3. mcp-hub-registry
+## 5. mcp-hub-registry
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -89,7 +133,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 4. difflog
+## 6. difflog
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -111,7 +155,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 5. codetwin-lsp
+## 7. codetwin-lsp
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -135,7 +179,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 6. delta-doctor
+## 8. delta-doctor
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -159,7 +203,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 7. interview-ready-cli
+## 9. interview-ready-cli
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -183,7 +227,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 8. llm-prices
+## 10. llm-prices
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -207,7 +251,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 9. pipewatch
+## 11. pipewatch
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -229,7 +273,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 10. awesome-uvx
+## 12. awesome-uvx
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/awesome-uvx) ~~done~~
 
@@ -253,7 +297,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 11. marimo-hub
+## 13. marimo-hub
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -277,7 +321,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 12. gcp-cost-sentinel
+## 14. gcp-cost-sentinel
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -299,7 +343,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 13. dotfiles-bootstrap
+## 15. dotfiles-bootstrap
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -323,7 +367,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 14. schema-drift-detector
+## 16. schema-drift-detector
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -347,15 +391,15 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 15. vicode-plugins
+## 17. vicode-plugins
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
 **Stack:** TypeScript, VS Code API, Rust (optional native module)
 
-**Career signal:** VS Code extension authorship is a niche skill that stands out. Extending an existing project (vicode) shows continuity of ownership.
+**Career signal:** Extends the in-progress vicode extension with a plugin architecture — shows continuity of ownership and the ability to design extensible systems in TypeScript.
 
-**Description:** A plugin system for [vicode](https://github.com/carlosferreyra/vicode) that lets users define custom code transformation pipelines triggered by keybindings. Each plugin is a small JS/TS module with a defined input/output contract.
+**Description:** A plugin system for [vicode](https://github.com/carlosferreyra/vicode) (currently in-progress) that lets users define custom code transformation pipelines triggered by keybindings. Each plugin is a small JS/TS module with a defined input/output contract.
 
 **Key features to build:**
 
@@ -365,13 +409,13 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 **Estimated effort:** M
 
-**Related existing work:** [vicode](https://github.com/carlosferreyra/vicode)
+**Related existing work:** [vicode](https://github.com/carlosferreyra/vicode) (parent project — in-progress)
 
 **Repo:** `carlosferreyra/vicode-plugins`
 
 ---
 
-## 16. bench-rs
+## 18. bench-rs
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
