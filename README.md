@@ -61,7 +61,29 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 3. wsr-cloud
+## 3. korvex
+
+**Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/korvex) ~~done~~
+
+**Stack:** Rust, proc-macros, pyo3, napi-rs, WASI / WIT
+
+**Career signal:** A zero-config Rust SDK for generating idiomatic language bindings via proc macros — directly signals deep Rust internals knowledge (macros, IR design, FFI) and positions you as an ecosystem builder in the interop space.
+
+**Description:** A composable alternative to UniFFI that generates Python, Node.js, and WASI bindings from annotated Rust source using `#[korvex::export]`. No UDL files, no separate schema — just annotate and build. Ships as a workspace of 9 crates: SDK, CLI, core engine, macros, type definitions, and three language adapters.
+
+**Key features to build:**
+
+- Annotation-driven export with `#[korvex::export]` proc macro — no config files required
+- Backend-agnostic adapter model: Python (pyo3), Node.js (napi-rs), WASI (WIT + component model)
+- CLI for inspection, validation, and code generation; extensible via custom `BindingAdapter` trait
+
+**Estimated effort:** L
+
+**Repo:** `carlosferreyra/korvex`
+
+---
+
+## 4. wsr-cloud
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -85,7 +107,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 4. cargo-heatmap
+## 5. cargo-heatmap
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -109,7 +131,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 5. mcp-hub-registry
+## 6. mcp-hub-registry
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -133,7 +155,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 6. difflog
+## 7. difflog
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -155,7 +177,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 7. codetwin-lsp
+## 8. codetwin-lsp
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -179,7 +201,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 8. delta-doctor
+## 9. delta-doctor
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -203,7 +225,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 9. interview-ready-cli
+## 10. interview-ready-cli
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -227,7 +249,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 10. llm-prices
+## 11. llm-prices
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -251,7 +273,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 11. pipewatch
+## 12. pipewatch
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -273,7 +295,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 12. awesome-uvx
+## 13. awesome-uvx
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/awesome-uvx) ~~done~~
 
@@ -297,7 +319,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 13. marimo-hub
+## 14. marimo-hub
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -321,7 +343,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 14. gcp-cost-sentinel
+## 15. gcp-cost-sentinel
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -343,7 +365,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 15. dotfiles-bootstrap
+## 16. dotfiles-bootstrap
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -367,7 +389,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 16. schema-drift-detector
+## 17. schema-drift-detector
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -391,7 +413,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 17. vicode-plugins
+## 18. vicode-plugins
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -415,7 +437,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ---
 
-## 18. bench-rs
+## 19. bench-rs
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
