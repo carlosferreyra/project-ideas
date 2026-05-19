@@ -9,7 +9,7 @@ A ranked backlog of project ideas to build, ordered by career impact.
 
 ## How to use this list
 
-This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/carlosferreyra/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue.
+This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/ectorial/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue.
 
 ---
 
@@ -19,7 +19,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 ## 1. wsr
 
-**Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/wsr) ~~done~~
+**Status:** ~~idea~~ [`in-progress`](https://github.com/ectorial/wsr) ~~done~~
 
 **Stack:** Rust, WASM, git hooks
 
@@ -35,7 +35,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 **Estimated effort:** L
 
-**Repo:** `carlosferreyra/wsr`
+**Repo:** `ectorial/wsr`
 
 ---
 
@@ -113,7 +113,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 **Career signal:** Extends an existing shipped project with a cloud backend — demonstrates full-cycle ownership from CLI to distributed infra, directly relevant to SRE/platform roles.
 
-**Description:** A cloud companion to [wsr](https://github.com/carlosferreyra/wsr) (currently in-progress) that streams CI results to a GCP-hosted dashboard in real time. Workers run on Cloud Run, results land in BigQuery, and a simple UI shows run history. Ties directly into GCP Associate Cloud Engineer cert.
+**Description:** A cloud companion to [wsr](https://github.com/ectorial/wsr) (currently in-progress) that streams CI results to a GCP-hosted dashboard in real time. Workers run on Cloud Run, results land in BigQuery, and a simple UI shows run history. Ties directly into GCP Associate Cloud Engineer cert.
 
 **Key features to build:**
 
@@ -123,7 +123,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 **Estimated effort:** L
 
-**Related existing work:** [wsr](https://github.com/carlosferreyra/wsr) (parent project — in-progress)
+**Related existing work:** [wsr](https://github.com/ectorial/wsr) (parent project — in-progress)
 
 **Repo:** `carlosferreyra/wsr-cloud`
 
@@ -147,7 +147,7 @@ This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career
 
 **Estimated effort:** M
 
-**Related existing work:** [wsr](https://github.com/carlosferreyra/wsr) (local CI runner — shares profiling motivation)
+**Related existing work:** [wsr](https://github.com/ectorial/wsr) (local CI runner — shares profiling motivation)
 
 **Repo:** `carlosferreyra/cargo-heatmap`
 
