@@ -19,7 +19,7 @@
 {% for project in projects %}
 ## {{ project.rank }}. {{ project.name }}
 
-**Status:** {% if project.status == "idea" %}`idea`{% else %}~~idea~~{% endif %} {% if project.status == "in-progress" %}[`in-progress`]({{ project.repo_url }}){% else %}~~in-progress~~{% endif %} {% if project.status == "done" %}`done`{% else %}~~done~~{% endif %}
+**Status:** {% if project.status == "idea" %}`idea`{% else %}~~idea~~{% endif %} {% if project.status == "in-progress" %}[`in-progress`]({{ project.repo_url }}){% else %}~~in-progress~~{% endif %} {% if project.status == "done" %}[`done`]({{ project.repo_url }}){% else %}~~done~~{% endif %}
 
 **Stack:** {{ project.stack | join(", ") }}
 
@@ -27,7 +27,7 @@
 
 **Description:** {{ project.description }}
 
-**Key features to build:**
+**{% if project.status == "done" %}Maintenance{% else %}Key features to build{% endif %}:**
 
 {% for feature in project.features -%}
 - {{ feature }}

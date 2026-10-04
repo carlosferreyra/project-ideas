@@ -2,8 +2,8 @@
   "meta": {
     "title": "project-ideas",
     "description": "A ranked backlog of project ideas to build, ordered by career impact.",
-    "last_updated": "2026-04-17",
-    "intro": "This doc is auto-updated by a scheduled Claude agent. Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/ectorial/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue."
+    "last_updated": "2026-10-04",
+    "intro": "Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/ectorial/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue.\n\nLast reviewed against GitHub on 2026-10-04: personal repositories, eight organizations, recent authored commits, and selected READMEs/releases. Existing rankings are preserved; additions follow the original backlog. `idea` means proposed or not implemented; `in-progress` includes scaffolds and maintained projects with remaining work; `done` means the core deliverable is shipped, not that maintenance has ended. See [review evidence](REVIEW.md) for sources and limitations."
   },
   "projects": [
     {
@@ -17,11 +17,11 @@
         "git hooks"
       ],
       "career_signal": "A local, Wasm-sandboxed CI runner built in Rust — directly demonstrates systems programming, sandboxing, and developer tooling depth that Big Tech infra teams look for.",
-      "description": "A local CI runner that executes git hooks inside a WASM sandbox, giving fast and reproducible pre-commit/pre-push checks without network dependencies. Currently in planning phase — architecture and core abstractions are being designed.",
+      "description": "A local CI runner intended to execute GitHub Actions workflows at git hooks inside a capability-limited Wasm sandbox. The latest substantive commit reorganized the project into a 16-crate Cargo workspace with command dispatch and engine/sandbox scaffolds. An early v0.0.2 release exists, but the current workspace is not evidence of a complete runner.",
       "features": [
-        "WASM sandbox runtime for hook execution isolation",
-        "Git hook lifecycle integration (pre-commit, pre-push, commit-msg)",
-        "TOML-based pipeline config with parallel step execution"
+        "Implement workflow execution through the scheduler and sandbox scaffolds",
+        "Connect GitHub Actions workflow parsing and expressions to git-hook execution",
+        "Validate capability grants and cache behavior with real workflow fixtures"
       ],
       "effort": "L",
       "related": [],
@@ -33,15 +33,17 @@
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/vicode",
       "stack": [
-        "TypeScript",
-        "VS Code API"
+        "Rust",
+        "proc-macros",
+        "Infrastructure-from-Code",
+        "cloud provider drivers"
       ],
-      "career_signal": "VS Code extension authorship is a rare portfolio item that signals deep editor integration knowledge and TypeScript proficiency — stands out among generalist candidates.",
-      "description": "A VS Code extension that brings opinionated code editing enhancements and custom keybinding workflows to the editor. Currently in planning phase — feature set and extension architecture are being scoped.",
+      "career_signal": "Compile-time infrastructure validation and provider-independent resource modeling demonstrate Rust type-system depth and platform engineering design.",
+      "description": "A Rust Infrastructure-from-Code framework with a vic CLI, abstract resource graph, and planned cloud-provider drivers. The README explicitly labels it planning and early development; v0.0.5 is an early release. It is not a VS Code editing extension.",
       "features": [
-        "Custom keybinding system with configurable command palette actions",
-        "Code transformation pipelines triggered by user-defined shortcuts",
-        "Lightweight plugin interface for extending behavior without forking"
+        "Validate resource graphs and required properties at compile time",
+        "Implement provider drivers for abstract compute, database, and storage resources",
+        "Prove the vic lifecycle on a small deployable example before adding polyglot bindings"
       ],
       "effort": "M",
       "related": [],
@@ -60,7 +62,7 @@
         "WASI / WIT"
       ],
       "career_signal": "A zero-config Rust SDK for generating idiomatic language bindings via proc macros — directly signals deep Rust internals knowledge (macros, IR design, FFI) and positions you as an ecosystem builder in the interop space.",
-      "description": "A composable alternative to UniFFI that generates Python, Node.js, and WASI bindings from annotated Rust source using `#[korvex::export]`. No UDL files, no separate schema — just annotate and build. Ships as a workspace of 9 crates: SDK, CLI, core engine, macros, type definitions, and three language adapters.",
+      "description": "An annotated-Rust binding SDK organized into SDK, CLI, adapter, core, macro, shared-type, and Python/Node/WASI crates, plus xtask. The README describes the export annotation and adapter contracts; treat complete cross-language generation as work to validate rather than a shipped guarantee.",
       "features": [
         "Annotation-driven export with `#[korvex::export]` proc macro — no config files required",
         "Backend-agnostic adapter model: Python (pyo3), Node.js (napi-rs), WASI (WIT + component model)",
@@ -204,15 +206,16 @@
       "repo_url": null,
       "stack": [
         "Rust",
-        "LSP (tower-lsp)",
-        "Claude API"
+        "LSP",
+        "CodeTwin CodeModel",
+        "VS Code API"
       ],
-      "career_signal": "LSP projects are rare in portfolios and signal deep editor/tooling knowledge. Extending an existing shipped project (codetwin) into the editor layer is a strong narrative arc.",
-      "description": "A Language Server Protocol implementation for [codetwin](https://github.com/carlosferreyra/codetwin) that surfaces doc suggestions inline as you type. Uses the Claude API with prompt caching to minimize cost on repeated context.",
+      "career_signal": "Extending repository architecture visualization into the editor demonstrates tooling integration and continuity of ownership.",
+      "description": "A proposed editor integration for CodeTwin that surfaces repository architecture visualizations and navigation from its CodeModel. The published v2 core is a scaffold whose drivers currently produce empty models; this extension should follow a working source-to-model-to-visualization path.",
       "features": [
-        "LSP server skeleton with `textDocument/completion` and `textDocument/hover`",
-        "Codetwin doc generation triggered on function hover",
-        "VS Code extension wrapper for distribution"
+        "Expose source symbols and relationships through an LSP server",
+        "Link editor locations to generated architecture visualizations",
+        "Build a VS Code client after the core driver produces meaningful models"
       ],
       "effort": "L",
       "related": [
@@ -345,11 +348,11 @@
         "GitHub Actions"
       ],
       "career_signal": "Being the go-to curator for a fast-growing tool (uv) builds mindshare before the ecosystem saturates. Awesome lists consistently rank well in search.",
-      "description": "A curated list of tools and recipes for running Python scripts via `uvx` without a virtualenv. Already started — needs regular updates, a contribution guide, and a CI badge checker.",
+      "description": "A maintained, data-driven catalog of Python CLI tools runnable through uvx/pipx. The current README lists 107 tools across 18 categories; tools.json, a contribution guide, validation/sync CI, and generated README updates are already present. Recent work expanded the catalog and changed README synchronization.",
       "features": [
-        "CI link checker (GitHub Actions)",
-        "Category taxonomy: dev tools, data science, AI/LLM, system utilities",
-        "Weekly auto-PR from a scraper of `uv`-compatible PyPI packages"
+        "Expand verified CLI recipes and executable mappings",
+        "Strengthen package/runtime compatibility checks for contributed entries",
+        "Keep release metadata and generated documentation synchronized"
       ],
       "effort": "S",
       "related": [
@@ -413,30 +416,31 @@
     },
     {
       "rank": 17,
-      "name": "dotfiles-bootstrap",
-      "status": "idea",
-      "repo_url": null,
+      "name": "profilectl",
+      "status": "in-progress",
+      "repo_url": "https://github.com/carlosferreyra/profilectl",
       "stack": [
         "Rust",
-        "shell",
-        "GitHub Actions"
+        "Clap",
+        "machine profiles",
+        "tool installation"
       ],
-      "career_signal": "A one-command dotfiles installer in Rust (not a bash script) is a strong flex — it's battle-tested, cross-platform, and demonstrates practical Rust beyond toy projects.",
-      "description": "A Rust binary that clones [dotfiles](https://github.com/carlosferreyra/dotfiles), resolves symlinks, installs packages via the system package manager, and sets up shell configs idempotently. Think `chezmoi` but hand-rolled and minimal.",
+      "career_signal": "Profile-based machine automation demonstrates desired-state modeling, safe planning, and practical Rust systems integration.",
+      "description": "Profile-based dotfile and developer-machine automation, replacing the overlapping dotfiles-bootstrap proposal. The published README describes a greenfield reset from rust-template: core crate layout and command models exist, while the CLI remains intentionally stubbed.",
       "features": [
-        "TOML manifest: packages, symlinks, post-install hooks",
-        "Idempotent installer with diff output (what changed vs. already installed)",
-        "GitHub Actions test matrix: macOS, Ubuntu"
+        "Implement desired-state planning and profile resolution",
+        "Apply filesystem and package-manager operations with tracked local state",
+        "Verify a personal-machine bootstrap before expanding the supported adapters"
       ],
       "effort": "M",
       "related": [
         {
-          "label": "dotfiles",
-          "url": "https://github.com/carlosferreyra/dotfiles",
-          "note": null
+          "label": "profilectl roadmap",
+          "url": "https://github.com/carlosferreyra/profilectl/blob/main/ROADMAP.md",
+          "note": "implementation direction"
         }
       ],
-      "suggested_repo": "carlosferreyra/dotfiles-bootstrap"
+      "suggested_repo": "carlosferreyra/profilectl"
     },
     {
       "rank": 18,
@@ -468,30 +472,30 @@
     },
     {
       "rank": 19,
-      "name": "vicode-plugins",
+      "name": "vicode-drivers",
       "status": "idea",
       "repo_url": null,
       "stack": [
-        "TypeScript",
-        "VS Code API",
-        "Rust (optional native module)"
+        "Rust",
+        "Vicode IR",
+        "cloud provider APIs"
       ],
-      "career_signal": "Extends the in-progress vicode extension with a plugin architecture — shows continuity of ownership and the ability to design extensible systems in TypeScript.",
-      "description": "A plugin system for [vicode](https://github.com/carlosferreyra/vicode) (currently in-progress) that lets users define custom code transformation pipelines triggered by keybindings. Each plugin is a small JS/TS module with a defined input/output contract.",
+      "career_signal": "Provider adapters for an existing Rust infrastructure framework demonstrate extensible platform design and practical cloud integration.",
+      "description": "A proposed driver SDK and provider implementations for Vicode’s Infrastructure-from-Code resource graph. Replaces the obsolete VS Code plugin concept and depends on stabilizing the core graph and lifecycle contracts.",
       "features": [
-        "Plugin manifest schema + loader",
-        "Built-in plugins: sort imports, extract variable, wrap in try/catch",
-        "Plugin marketplace integration (VS Code extension gallery)"
+        "Define a provider-driver contract for resource validation and lifecycle operations",
+        "Implement one provider with a small compute/storage example",
+        "Add conformance fixtures before supporting additional providers"
       ],
       "effort": "M",
       "related": [
         {
           "label": "vicode",
           "url": "https://github.com/carlosferreyra/vicode",
-          "note": "parent project — in-progress"
+          "note": "early development; driver scope proposed"
         }
       ],
-      "suggested_repo": "carlosferreyra/vicode-plugins"
+      "suggested_repo": "carlosferreyra/vicode-drivers"
     },
     {
       "rank": 20,
@@ -514,6 +518,215 @@
       "effort": "S",
       "related": [],
       "suggested_repo": "carlosferreyra/bench-rs"
+    },
+    {
+      "rank": 21,
+      "name": "codetwin",
+      "status": "in-progress",
+      "repo_url": "https://github.com/carlosferreyra/codetwin",
+      "stack": [
+        "Rust",
+        "CodeModel IR",
+        "Markdown",
+        "architecture visualization"
+      ],
+      "career_signal": "Repository analysis and visualization combine language tooling, graph modeling, and developer experience.",
+      "description": "A language-agnostic CLI for repository visual documentation. The published v2 README explicitly says architecture scaffold: the binary runs, but drivers produce empty CodeModels. Workspace and IR extraction commits establish ongoing implementation, not completed analysis.",
+      "features": [
+        "Implement a real source-language driver",
+        "Render useful repository-overview and architecture-map visualizations",
+        "Verify model snapshots and architecture diffs against source fixtures"
+      ],
+      "effort": "L",
+      "related": [],
+      "suggested_repo": "carlosferreyra/codetwin"
+    },
+    {
+      "rank": 22,
+      "name": "awesome-bunx",
+      "status": "in-progress",
+      "repo_url": "https://github.com/carlosferreyra/awesome-bunx",
+      "stack": [
+        "JavaScript/TypeScript",
+        "JSON",
+        "GitHub Actions",
+        "Markdown"
+      ],
+      "career_signal": "Maintained ecosystem catalogs show community ownership and repeatable metadata automation.",
+      "description": "A maintained JavaScript/TypeScript CLI catalog, complementary to awesome-uvx. Generated tool tables and weekly npm metadata-sync commits are present; continued curation and compatibility verification remain useful work.",
+      "features": [
+        "Expand verified tools and runnable recipes",
+        "Validate package-to-executable mappings",
+        "Maintain metadata synchronization and contribution checks"
+      ],
+      "effort": "S",
+      "related": [],
+      "suggested_repo": "carlosferreyra/awesome-bunx"
+    },
+    {
+      "rank": 23,
+      "name": "awesome-cargo-install",
+      "status": "in-progress",
+      "repo_url": "https://github.com/carlosferreyra/awesome-cargo-install",
+      "stack": [
+        "Rust",
+        "JSON",
+        "GitHub Actions",
+        "Markdown"
+      ],
+      "career_signal": "Maintained ecosystem catalogs show community ownership and repeatable metadata automation.",
+      "description": "A maintained Rust CLI catalog, complementary to awesome-uvx. Generated tool tables and weekly crates.io metadata-sync commits are present; continued curation and compatibility verification remain useful work.",
+      "features": [
+        "Expand verified tools and runnable recipes",
+        "Validate package-to-executable mappings",
+        "Maintain metadata synchronization and contribution checks"
+      ],
+      "effort": "S",
+      "related": [],
+      "suggested_repo": "carlosferreyra/awesome-cargo-install"
+    },
+    {
+      "rank": 24,
+      "name": "rust-template",
+      "status": "in-progress",
+      "repo_url": "https://github.com/carlosferreyra/rust-template",
+      "stack": [
+        "Rust",
+        "cargo-generate",
+        "xtask",
+        "GitHub Actions"
+      ],
+      "career_signal": "Reusable project infrastructure demonstrates engineering consistency across multiple Rust products.",
+      "description": "An existing cargo-generate workspace template with xtask development automation, hooks, and documented template configuration. July commits fixed command wrappers and generated-CLI test behavior; October activity includes dependency maintenance.",
+      "features": [
+        "Smoke-test a generated workspace",
+        "Document and verify optional capabilities",
+        "Keep downstream scaffold consumers aligned"
+      ],
+      "effort": "M",
+      "related": [],
+      "suggested_repo": "carlosferreyra/rust-template"
+    },
+    {
+      "rank": 25,
+      "name": "business-card",
+      "status": "done",
+      "repo_url": "https://github.com/carlosferreyra/business-card",
+      "stack": [
+        "Rust",
+        "cargo-dist",
+        "PyPI/npm wrappers",
+        "JSON"
+      ],
+      "career_signal": "A shipped native CLI with multiple distribution entrypoints demonstrates packaging and delivery.",
+      "description": "A released Rust CLI business card with interactive and non-interactive modes, runtime resume metadata refresh, and an embedded offline fallback. GitHub release v1.2.15 and documented cargo/uvx/bunx entrypoints establish a shipped core deliverable; ongoing maintenance continues.",
+      "features": [
+        "Maintain wrapper distribution and release artifacts",
+        "Keep the offline resume fallback synchronized"
+      ],
+      "effort": "S",
+      "related": [],
+      "suggested_repo": "carlosferreyra/business-card"
+    },
+    {
+      "rank": 26,
+      "name": "wasi-action-kit",
+      "status": "idea",
+      "repo_url": null,
+      "stack": [
+        "Rust",
+        "WASI",
+        "WIT",
+        "wsr"
+      ],
+      "career_signal": "A working sandboxed action library would provide a practical validation target for the wsr ecosystem.",
+      "description": "Proposed reusable WASI actions and a conformance fixture suite for wsr. ectorial/actions currently contains only a LICENSE and an initial commit, so the organization description is a direction rather than evidence of implemented actions.",
+      "features": [
+        "Build one minimal action/component",
+        "Test capability failures and deterministic outputs",
+        "Document the action contract against a real wsr execution path"
+      ],
+      "effort": "M",
+      "related": [
+        {
+          "label": "ectorial/actions",
+          "url": "https://github.com/ectorial/actions",
+          "note": "source project"
+        },
+        {
+          "label": "ectorial/wsr",
+          "url": "https://github.com/ectorial/wsr",
+          "note": "source project"
+        }
+      ],
+      "suggested_repo": "carlosferreyra/wasi-action-kit"
+    },
+    {
+      "rank": 27,
+      "name": "cli-catalog-validator",
+      "status": "idea",
+      "repo_url": null,
+      "stack": [
+        "Python",
+        "JSON Schema",
+        "uvx",
+        "bunx",
+        "cargo"
+      ],
+      "career_signal": "A shared validation tool can turn catalog maintenance into reusable developer infrastructure.",
+      "description": "Proposed validation tooling derived from the three existing CLI catalogs. Focus on common metadata and executable checks while preserving each package manager’s runtime behavior.",
+      "features": [
+        "Validate required metadata and executable mappings",
+        "Run explicitly selected CLI smoke checks in CI",
+        "Produce a structured report for catalog contributions"
+      ],
+      "effort": "M",
+      "related": [
+        {
+          "label": "carlosferreyra/awesome-uvx",
+          "url": "https://github.com/carlosferreyra/awesome-uvx",
+          "note": "source project"
+        },
+        {
+          "label": "carlosferreyra/awesome-bunx",
+          "url": "https://github.com/carlosferreyra/awesome-bunx",
+          "note": "source project"
+        },
+        {
+          "label": "carlosferreyra/awesome-cargo-install",
+          "url": "https://github.com/carlosferreyra/awesome-cargo-install",
+          "note": "source project"
+        }
+      ],
+      "suggested_repo": "carlosferreyra/cli-catalog-validator"
+    },
+    {
+      "rank": 28,
+      "name": "teaching-repo-auditor",
+      "status": "idea",
+      "repo_url": null,
+      "stack": [
+        "Python",
+        "GitHub API",
+        "JSON",
+        "Markdown"
+      ],
+      "career_signal": "Educational repository administration can become a practical API and reporting portfolio project.",
+      "description": "Proposed read-only course-repository audit tool inspired by FRRe-DS’s 2026 TPI template and group repositories. Organization activity establishes the setting; it does not establish personal authorship of student implementations.",
+      "features": [
+        "Inventory assignment repositories and expected files",
+        "Report missing CI/configuration and stale default branches",
+        "Generate a course summary with links and explicit evidence"
+      ],
+      "effort": "M",
+      "related": [
+        {
+          "label": "FRRe-DS/2026-TPI",
+          "url": "https://github.com/FRRe-DS/2026-TPI",
+          "note": "source project"
+        }
+      ],
+      "suggested_repo": "carlosferreyra/teaching-repo-auditor"
     }
   ],
   "graveyard": [
