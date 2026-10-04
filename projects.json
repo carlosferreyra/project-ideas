@@ -416,34 +416,6 @@
     },
     {
       "rank": 17,
-      "name": "profilectl",
-      "status": "in-progress",
-      "repo_url": "https://github.com/carlosferreyra/profilectl",
-      "stack": [
-        "Rust",
-        "Clap",
-        "machine profiles",
-        "tool installation"
-      ],
-      "career_signal": "Profile-based machine automation demonstrates desired-state modeling, safe planning, and practical Rust systems integration.",
-      "description": "Profile-based dotfile and developer-machine automation, replacing the overlapping dotfiles-bootstrap proposal. The published README describes a greenfield reset from rust-template: core crate layout and command models exist, while the CLI remains intentionally stubbed.",
-      "features": [
-        "Implement desired-state planning and profile resolution",
-        "Apply filesystem and package-manager operations with tracked local state",
-        "Verify a personal-machine bootstrap before expanding the supported adapters"
-      ],
-      "effort": "M",
-      "related": [
-        {
-          "label": "profilectl roadmap",
-          "url": "https://github.com/carlosferreyra/profilectl/blob/main/ROADMAP.md",
-          "note": "implementation direction"
-        }
-      ],
-      "suggested_repo": "carlosferreyra/profilectl"
-    },
-    {
-      "rank": 18,
       "name": "schema-drift-detector",
       "status": "idea",
       "repo_url": null,
@@ -471,7 +443,7 @@
       "suggested_repo": "carlosferreyra/schema-drift-detector"
     },
     {
-      "rank": 19,
+      "rank": 18,
       "name": "vicode-drivers",
       "status": "idea",
       "repo_url": null,
@@ -498,7 +470,7 @@
       "suggested_repo": "carlosferreyra/vicode-drivers"
     },
     {
-      "rank": 20,
+      "rank": 19,
       "name": "bench-rs",
       "status": "idea",
       "repo_url": null,
@@ -520,7 +492,7 @@
       "suggested_repo": "carlosferreyra/bench-rs"
     },
     {
-      "rank": 21,
+      "rank": 20,
       "name": "codetwin",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/codetwin",
@@ -542,7 +514,7 @@
       "suggested_repo": "carlosferreyra/codetwin"
     },
     {
-      "rank": 22,
+      "rank": 21,
       "name": "awesome-bunx",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/awesome-bunx",
@@ -564,7 +536,7 @@
       "suggested_repo": "carlosferreyra/awesome-bunx"
     },
     {
-      "rank": 23,
+      "rank": 22,
       "name": "awesome-cargo-install",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/awesome-cargo-install",
@@ -586,7 +558,7 @@
       "suggested_repo": "carlosferreyra/awesome-cargo-install"
     },
     {
-      "rank": 24,
+      "rank": 23,
       "name": "rust-template",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/rust-template",
@@ -608,7 +580,7 @@
       "suggested_repo": "carlosferreyra/rust-template"
     },
     {
-      "rank": 25,
+      "rank": 24,
       "name": "business-card",
       "status": "done",
       "repo_url": "https://github.com/carlosferreyra/business-card",
@@ -629,7 +601,7 @@
       "suggested_repo": "carlosferreyra/business-card"
     },
     {
-      "rank": 26,
+      "rank": 25,
       "name": "wasi-action-kit",
       "status": "idea",
       "repo_url": null,
@@ -662,7 +634,7 @@
       "suggested_repo": "carlosferreyra/wasi-action-kit"
     },
     {
-      "rank": 27,
+      "rank": 26,
       "name": "cli-catalog-validator",
       "status": "idea",
       "repo_url": null,
@@ -701,7 +673,7 @@
       "suggested_repo": "carlosferreyra/cli-catalog-validator"
     },
     {
-      "rank": 28,
+      "rank": 27,
       "name": "teaching-repo-auditor",
       "status": "idea",
       "repo_url": null,

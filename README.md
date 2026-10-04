@@ -389,31 +389,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 17. profilectl
-
-**Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/profilectl) ~~done~~
-
-**Stack:** Rust, Clap, machine profiles, tool installation
-
-**Career signal:** Profile-based machine automation demonstrates desired-state modeling, safe planning, and practical Rust systems integration.
-
-**Description:** Profile-based dotfile and developer-machine automation, replacing the overlapping dotfiles-bootstrap proposal. The published README describes a greenfield reset from rust-template: core crate layout and command models exist, while the CLI remains intentionally stubbed.
-
-**Key features to build:**
-
-- Implement desired-state planning and profile resolution
-- Apply filesystem and package-manager operations with tracked local state
-- Verify a personal-machine bootstrap before expanding the supported adapters
-
-**Estimated effort:** M
-
-**Related existing work:** [profilectl roadmap](https://github.com/carlosferreyra/profilectl/blob/main/ROADMAP.md) (implementation direction)
-
-**Repo:** `carlosferreyra/profilectl`
-
----
-
-## 18. schema-drift-detector
+## 17. schema-drift-detector
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -437,7 +413,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 19. vicode-drivers
+## 18. vicode-drivers
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -461,7 +437,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 20. bench-rs
+## 19. bench-rs
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -483,7 +459,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 21. codetwin
+## 20. codetwin
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/codetwin) ~~done~~
 
@@ -505,7 +481,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 22. awesome-bunx
+## 21. awesome-bunx
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/awesome-bunx) ~~done~~
 
@@ -527,7 +503,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 23. awesome-cargo-install
+## 22. awesome-cargo-install
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/awesome-cargo-install) ~~done~~
 
@@ -549,7 +525,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 24. rust-template
+## 23. rust-template
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/rust-template) ~~done~~
 
@@ -571,7 +547,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 25. business-card
+## 24. business-card
 
 **Status:** ~~idea~~ ~~in-progress~~ [`done`](https://github.com/carlosferreyra/business-card)
 
@@ -592,7 +568,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 26. wasi-action-kit
+## 25. wasi-action-kit
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -616,7 +592,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 27. cli-catalog-validator
+## 26. cli-catalog-validator
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -640,7 +616,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ---
 
-## 28. teaching-repo-auditor
+## 27. teaching-repo-auditor
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
