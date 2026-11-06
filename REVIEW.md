@@ -1,4 +1,39 @@
-# Project idea audit — 2026-11-06
+# Current update — pyrs retirement
+
+The active backlog now contains **26 ranked ideas**: 17 `idea`, eight `in-progress`,
+and one `done`. The graveyard contains **six entries**, including **pyrs — deprecated /
+retired**. Remaining projects retain their relative order and are renumbered 1–26.
+The retirement disposition belongs to the graveyard; no new active status is introduced.
+
+The standalone Python-to-Rust transpiler goal is superseded by
+[py2many upstream](https://github.com/py2many/py2many). The user is pivoting to
+contributing to py2many, especially its Rust backend, using the
+[personal fork](https://github.com/carlosferreyra/py2many). GitHub metadata was read
+again for this update: the fork reports `fork=true` and parent `py2many/py2many`;
+[pyrs](https://github.com/carlosferreyra/pyrs) reports `archived=true`, and its main
+HEAD is the [retirement README commit ecec859](https://github.com/carlosferreyra/pyrs/commit/ecec859a9031f982a1a4f599636a77c9523ee788).
+
+Retiring the duplicate project preserves the useful compiler, type-inference,
+ownership and Rust interoperability rationale while redirecting effort upstream.
+The retirement preserves the pyrs repository/history and local checkout; landscape
+research at [ecee7db](https://github.com/carlosferreyra/pyrs/tree/ecee7db5f9de64b2b22f102307eb6e4842879bc3/docs)
+remains available in `docs/python-rust-landscape.md` and `docs/README.md`.
+No py2many backend implementation or upstream issue/PR submission is claimed or
+performed by this repository update.
+
+Validation: regenerated README.md and README.html through scripts/sync_readme.py;
+checked all 26 active entries, six graveyard entries, contiguous ranks, unchanged
+remaining project content/statuses, retirement links, deterministic generation,
+HTML JavaScript syntax and diff whitespace.
+
+The audit below is a historical snapshot from before retirement. Its 27-project /
+five-graveyard counts, original ranks, pyrs `idea` assessment and local/T3 setup
+observations describe that earlier state; this section supersedes those for pyrs.
+Other projects were not re-audited as part of this scoped retirement update.
+
+---
+
+# Historical project idea audit — 2026-11-06
 
 ## Scope and method
 

@@ -11,7 +11,7 @@ A ranked backlog of project ideas to build, ordered by career impact.
 
 Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/ectorial/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue.
 
-Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eight additional related repositories; GitHub evidence and relevant local checkouts were inspected. Rankings are preserved. `idea` means proposed or no implementation/scaffold evidence, including README-only repository setup; `in-progress` includes implementation/scaffolds and maintained projects with remaining work; `done` means the core deliverable is shipped, not that maintenance has ended. Unavailable repositories remain unresolved rather than assumed absent. See [review evidence](REVIEW.md) for per-idea findings, access limits, and validation scope.
+Full audit on 2026-11-06 covered the then-current 27 ranked ideas, five graveyard entries, and eight additional related repositories; GitHub evidence and relevant local checkouts were inspected. Subsequent retirement update: pyrs is deprecated/retired in favor of contributing to py2many, especially its Rust backend. The current backlog has 26 ranked ideas and six graveyard entries; remaining ideas retain their relative order. `idea` means proposed or no implementation/scaffold evidence, including README-only repository setup; `in-progress` includes implementation/scaffolds and maintained projects with remaining work; `done` means the core deliverable is shipped, not that maintenance has ended. Unavailable repositories remain unresolved rather than assumed absent. See [review evidence](REVIEW.md) for retirement evidence and historical per-idea findings, access limits, and validation scope.
 
 ---
 
@@ -85,29 +85,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 4. pyrs
-
-**Status:** [`idea`](https://github.com/carlosferreyra/pyrs) ~~in-progress~~ ~~done~~
-
-**Stack:** Rust, tree-sitter, Python type system, syn
-
-**Career signal:** A Python→Rust source transpiler is among the most technically ambitious compiler projects in open source — signals deep knowledge of AST design, type inference, and Rust's ownership model, directly distinguishing you from generalist candidates.
-
-**Description:** Proposed source-to-source transpiler from Mypy-annotated Python to idiomatic Rust. Quickstart setup completed on 2026-11-06: the public repository was created, cloned locally, and registered in T3 as pyrs. Initial commit 2546afa contains only a minimal README; no implementation, scaffold, tests, or CI exists yet, so implementation status remains idea. Planned scope: tree-sitter parsing, local dataflow type inference, and Rust emission with ownership/lifetime heuristics for functions, structs, basic control flow, and common stdlib patterns.
-
-**Key features to build:**
-
-- tree-sitter-based Python parser with type annotation extraction (PEP 484/526)
-- Type inference engine for unannotated locals using local dataflow analysis
-- Rust emitter with ownership/lifetime heuristics for functions, structs, and basic control flow
-
-**Estimated effort:** L
-
-**Repo:** `carlosferreyra/pyrs`
-
----
-
-## 5. wsr-cloud
+## 4. wsr-cloud
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -131,7 +109,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 6. cargo-heatmap
+## 5. cargo-heatmap
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -155,7 +133,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 7. mcp-hub-registry
+## 6. mcp-hub-registry
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -179,7 +157,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 8. difflog
+## 7. difflog
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -201,7 +179,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 9. codetwin-lsp
+## 8. codetwin-lsp
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -225,7 +203,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 10. delta-doctor
+## 9. delta-doctor
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -249,7 +227,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 11. interview-ready-cli
+## 10. interview-ready-cli
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -273,7 +251,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 12. llm-prices
+## 11. llm-prices
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -297,7 +275,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 13. pipewatch
+## 12. pipewatch
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -319,7 +297,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 14. awesome-uvx
+## 13. awesome-uvx
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/awesome-uvx) ~~done~~
 
@@ -343,7 +321,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 15. marimo-hub
+## 14. marimo-hub
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -367,7 +345,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 16. gcp-cost-sentinel
+## 15. gcp-cost-sentinel
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -389,7 +367,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 17. schema-drift-detector
+## 16. schema-drift-detector
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -413,7 +391,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 18. vicode-drivers
+## 17. vicode-drivers
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -437,7 +415,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 19. bench-rs
+## 18. bench-rs
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -459,7 +437,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 20. codetwin
+## 19. codetwin
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/codetwin) ~~done~~
 
@@ -481,7 +459,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 21. awesome-bunx
+## 20. awesome-bunx
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/awesome-bunx) ~~done~~
 
@@ -503,7 +481,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 22. awesome-cargo-install
+## 21. awesome-cargo-install
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/awesome-cargo-install) ~~done~~
 
@@ -525,7 +503,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 23. rust-template
+## 22. rust-template
 
 **Status:** ~~idea~~ [`in-progress`](https://github.com/carlosferreyra/rust-template) ~~done~~
 
@@ -547,7 +525,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 24. business-card
+## 23. business-card
 
 **Status:** ~~idea~~ ~~in-progress~~ [`done`](https://github.com/carlosferreyra/business-card)
 
@@ -568,7 +546,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 25. wasi-action-kit
+## 24. wasi-action-kit
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -592,7 +570,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 26. cli-catalog-validator
+## 25. cli-catalog-validator
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -616,7 +594,7 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ---
 
-## 27. teaching-repo-auditor
+## 26. teaching-repo-auditor
 
 **Status:** `idea` ~~in-progress~~ ~~done~~
 
@@ -642,15 +620,16 @@ Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eig
 
 ## Idea Graveyard
 
-Ideas considered but deprioritized:
+Ideas considered but deprioritized or retired:
 
-| Idea | Reason deprioritized |
+| Idea | Reason deprioritized or retired |
 | --- | --- |
 | **Rust async runtime from scratch** | High learning value but near-zero open-source appeal; covered better by tokio docs. |
 | **Personal finance tracker** | Saturated market; no Rust/data engineering angle that adds differentiation. |
 | **LLM fine-tuning pipeline** | Requires GPU budget not practical without company resources; poor ROI for portfolio. |
 | **Browser extension for job tracking** | TypeScript-only, no systems angle; dozens of identical tools already exist. |
 | **Custom Neovim distro** | Dotfiles ecosystem overlap with no career signal beyond personal preference. |
+| **pyrs — deprecated / retired** | The standalone Python-to-Rust transpiler goal is superseded by [py2many](https://github.com/py2many/py2many). Pivot to contributing upstream, especially its Rust backend, through the verified [personal fork](https://github.com/carlosferreyra/py2many). This preserves the compiler/type-inference/ownership learning and Rust interoperability rationale without duplicating the transpiler project. The [pyrs repository](https://github.com/carlosferreyra/pyrs) is archived; its [retirement README](https://github.com/carlosferreyra/pyrs/commit/ecec859a9031f982a1a4f599636a77c9523ee788), history and [Python/Rust landscape research](https://github.com/carlosferreyra/pyrs/blob/ecee7db5f9de64b2b22f102307eb6e4842879bc3/docs/python-rust-landscape.md) remain preserved. This records contribution direction, not implemented backend work or submitted upstream contributions. |
 
 ---
 

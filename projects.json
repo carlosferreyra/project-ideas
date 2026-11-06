@@ -3,7 +3,7 @@
     "title": "project-ideas",
     "description": "A ranked backlog of project ideas to build, ordered by career impact.",
     "last_updated": "2026-11-06",
-    "intro": "Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/ectorial/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue.\n\nLast audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eight additional related repositories; GitHub evidence and relevant local checkouts were inspected. Rankings are preserved. `idea` means proposed or no implementation/scaffold evidence, including README-only repository setup; `in-progress` includes implementation/scaffolds and maintained projects with remaining work; `done` means the core deliverable is shipped, not that maintenance has ended. Unavailable repositories remain unresolved rather than assumed absent. See [review evidence](REVIEW.md) for per-idea findings, access limits, and validation scope."
+    "intro": "Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/ectorial/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue.\n\nFull audit on 2026-11-06 covered the then-current 27 ranked ideas, five graveyard entries, and eight additional related repositories; GitHub evidence and relevant local checkouts were inspected. Subsequent retirement update: pyrs is deprecated/retired in favor of contributing to py2many, especially its Rust backend. The current backlog has 26 ranked ideas and six graveyard entries; remaining ideas retain their relative order. `idea` means proposed or no implementation/scaffold evidence, including README-only repository setup; `in-progress` includes implementation/scaffolds and maintained projects with remaining work; `done` means the core deliverable is shipped, not that maintenance has ended. Unavailable repositories remain unresolved rather than assumed absent. See [review evidence](REVIEW.md) for retirement evidence and historical per-idea findings, access limits, and validation scope."
   },
   "projects": [
     {
@@ -74,28 +74,6 @@
     },
     {
       "rank": 4,
-      "name": "pyrs",
-      "status": "idea",
-      "repo_url": "https://github.com/carlosferreyra/pyrs",
-      "stack": [
-        "Rust",
-        "tree-sitter",
-        "Python type system",
-        "syn"
-      ],
-      "career_signal": "A Python→Rust source transpiler is among the most technically ambitious compiler projects in open source — signals deep knowledge of AST design, type inference, and Rust's ownership model, directly distinguishing you from generalist candidates.",
-      "description": "Proposed source-to-source transpiler from Mypy-annotated Python to idiomatic Rust. Quickstart setup completed on 2026-11-06: the public repository was created, cloned locally, and registered in T3 as pyrs. Initial commit 2546afa contains only a minimal README; no implementation, scaffold, tests, or CI exists yet, so implementation status remains idea. Planned scope: tree-sitter parsing, local dataflow type inference, and Rust emission with ownership/lifetime heuristics for functions, structs, basic control flow, and common stdlib patterns.",
-      "features": [
-        "tree-sitter-based Python parser with type annotation extraction (PEP 484/526)",
-        "Type inference engine for unannotated locals using local dataflow analysis",
-        "Rust emitter with ownership/lifetime heuristics for functions, structs, and basic control flow"
-      ],
-      "effort": "L",
-      "related": [],
-      "suggested_repo": "carlosferreyra/pyrs"
-    },
-    {
-      "rank": 5,
       "name": "wsr-cloud",
       "status": "idea",
       "repo_url": null,
@@ -123,7 +101,7 @@
       "suggested_repo": "carlosferreyra/wsr-cloud"
     },
     {
-      "rank": 6,
+      "rank": 5,
       "name": "cargo-heatmap",
       "status": "idea",
       "repo_url": null,
@@ -151,7 +129,7 @@
       "suggested_repo": "carlosferreyra/cargo-heatmap"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "name": "mcp-hub-registry",
       "status": "idea",
       "repo_url": null,
@@ -179,7 +157,7 @@
       "suggested_repo": "carlosferreyra/mcp-hub-registry"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "name": "difflog",
       "status": "idea",
       "repo_url": null,
@@ -200,7 +178,7 @@
       "suggested_repo": "carlosferreyra/difflog"
     },
     {
-      "rank": 9,
+      "rank": 8,
       "name": "codetwin-lsp",
       "status": "idea",
       "repo_url": null,
@@ -228,7 +206,7 @@
       "suggested_repo": "carlosferreyra/codetwin-lsp"
     },
     {
-      "rank": 10,
+      "rank": 9,
       "name": "delta-doctor",
       "status": "idea",
       "repo_url": null,
@@ -261,7 +239,7 @@
       "suggested_repo": "carlosferreyra/delta-doctor"
     },
     {
-      "rank": 11,
+      "rank": 10,
       "name": "interview-ready-cli",
       "status": "idea",
       "repo_url": null,
@@ -288,7 +266,7 @@
       "suggested_repo": "carlosferreyra/interview-ready-cli"
     },
     {
-      "rank": 12,
+      "rank": 11,
       "name": "llm-prices",
       "status": "idea",
       "repo_url": null,
@@ -315,7 +293,7 @@
       "suggested_repo": "carlosferreyra/llm-prices"
     },
     {
-      "rank": 13,
+      "rank": 12,
       "name": "pipewatch",
       "status": "idea",
       "repo_url": null,
@@ -337,7 +315,7 @@
       "suggested_repo": "carlosferreyra/pipewatch"
     },
     {
-      "rank": 14,
+      "rank": 13,
       "name": "awesome-uvx",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/awesome-uvx",
@@ -365,7 +343,7 @@
       "suggested_repo": "carlosferreyra/awesome-uvx"
     },
     {
-      "rank": 15,
+      "rank": 14,
       "name": "marimo-hub",
       "status": "idea",
       "repo_url": null,
@@ -393,7 +371,7 @@
       "suggested_repo": "carlosferreyra/marimo-hub"
     },
     {
-      "rank": 16,
+      "rank": 15,
       "name": "gcp-cost-sentinel",
       "status": "idea",
       "repo_url": null,
@@ -415,7 +393,7 @@
       "suggested_repo": "carlosferreyra/gcp-cost-sentinel"
     },
     {
-      "rank": 17,
+      "rank": 16,
       "name": "schema-drift-detector",
       "status": "idea",
       "repo_url": null,
@@ -443,7 +421,7 @@
       "suggested_repo": "carlosferreyra/schema-drift-detector"
     },
     {
-      "rank": 18,
+      "rank": 17,
       "name": "vicode-drivers",
       "status": "idea",
       "repo_url": null,
@@ -470,7 +448,7 @@
       "suggested_repo": "carlosferreyra/vicode-drivers"
     },
     {
-      "rank": 19,
+      "rank": 18,
       "name": "bench-rs",
       "status": "idea",
       "repo_url": null,
@@ -492,7 +470,7 @@
       "suggested_repo": "carlosferreyra/bench-rs"
     },
     {
-      "rank": 20,
+      "rank": 19,
       "name": "codetwin",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/codetwin",
@@ -514,7 +492,7 @@
       "suggested_repo": "carlosferreyra/codetwin"
     },
     {
-      "rank": 21,
+      "rank": 20,
       "name": "awesome-bunx",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/awesome-bunx",
@@ -536,7 +514,7 @@
       "suggested_repo": "carlosferreyra/awesome-bunx"
     },
     {
-      "rank": 22,
+      "rank": 21,
       "name": "awesome-cargo-install",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/awesome-cargo-install",
@@ -558,7 +536,7 @@
       "suggested_repo": "carlosferreyra/awesome-cargo-install"
     },
     {
-      "rank": 23,
+      "rank": 22,
       "name": "rust-template",
       "status": "in-progress",
       "repo_url": "https://github.com/carlosferreyra/rust-template",
@@ -580,7 +558,7 @@
       "suggested_repo": "carlosferreyra/rust-template"
     },
     {
-      "rank": 24,
+      "rank": 23,
       "name": "business-card",
       "status": "done",
       "repo_url": "https://github.com/carlosferreyra/business-card",
@@ -601,7 +579,7 @@
       "suggested_repo": "carlosferreyra/business-card"
     },
     {
-      "rank": 25,
+      "rank": 24,
       "name": "wasi-action-kit",
       "status": "idea",
       "repo_url": null,
@@ -634,7 +612,7 @@
       "suggested_repo": "carlosferreyra/wasi-action-kit"
     },
     {
-      "rank": 26,
+      "rank": 25,
       "name": "cli-catalog-validator",
       "status": "idea",
       "repo_url": null,
@@ -673,7 +651,7 @@
       "suggested_repo": "carlosferreyra/cli-catalog-validator"
     },
     {
-      "rank": 27,
+      "rank": 26,
       "name": "teaching-repo-auditor",
       "status": "idea",
       "repo_url": null,
@@ -721,6 +699,10 @@
     {
       "name": "Custom Neovim distro",
       "reason": "Dotfiles ecosystem overlap with no career signal beyond personal preference."
+    },
+    {
+      "name": "pyrs — deprecated / retired",
+      "reason": "The standalone Python-to-Rust transpiler goal is superseded by [py2many](https://github.com/py2many/py2many). Pivot to contributing upstream, especially its Rust backend, through the verified [personal fork](https://github.com/carlosferreyra/py2many). This preserves the compiler/type-inference/ownership learning and Rust interoperability rationale without duplicating the transpiler project. The [pyrs repository](https://github.com/carlosferreyra/pyrs) is archived; its [retirement README](https://github.com/carlosferreyra/pyrs/commit/ecec859a9031f982a1a4f599636a77c9523ee788), history and [Python/Rust landscape research](https://github.com/carlosferreyra/pyrs/blob/ecee7db5f9de64b2b22f102307eb6e4842879bc3/docs/python-rust-landscape.md) remain preserved. This records contribution direction, not implemented backend work or submitted upstream contributions."
     }
   ],
   "resources": [
