@@ -3,7 +3,7 @@
 A ranked backlog of project ideas to build, ordered by career impact.
 
 ![GitHub Repo stars](https://img.shields.io/github/stars/carlosferreyra/project-ideas?style=flat-square)
-![Last updated](https://img.shields.io/badge/last%20updated-2026--10--04-blue?style=flat-square)
+![Last updated](https://img.shields.io/badge/last%20updated-2026--11--06-blue?style=flat-square)
 
 ---
 
@@ -11,7 +11,7 @@ A ranked backlog of project ideas to build, ordered by career impact.
 
 Ideas are ranked by career signal value — visibility to hiring managers, technical depth, and open-source appeal. Rankings favor Rust/systems work, data engineering angles (Databricks/GCP), and projects that extend the existing [wsr](https://github.com/ectorial/wsr) / [codetwin](https://github.com/carlosferreyra/codetwin) ecosystem. To propose an idea, open an issue.
 
-Last reviewed against GitHub on 2026-10-04: personal repositories, eight organizations, recent authored commits, and selected READMEs/releases. Existing rankings are preserved; additions follow the original backlog. `idea` means proposed or not implemented; `in-progress` includes scaffolds and maintained projects with remaining work; `done` means the core deliverable is shipped, not that maintenance has ended. See [review evidence](REVIEW.md) for sources and limitations.
+Last audited on 2026-11-06: all 27 ranked ideas, five graveyard entries, and eight additional related repositories; GitHub evidence and relevant local checkouts were inspected. Rankings are preserved. `idea` means proposed or no implementation/scaffold evidence, including README-only repository setup; `in-progress` includes implementation/scaffolds and maintained projects with remaining work; `done` means the core deliverable is shipped, not that maintenance has ended. Unavailable repositories remain unresolved rather than assumed absent. See [review evidence](REVIEW.md) for per-idea findings, access limits, and validation scope.
 
 ---
 
@@ -27,7 +27,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** A local, Wasm-sandboxed CI runner built in Rust — directly demonstrates systems programming, sandboxing, and developer tooling depth that Big Tech infra teams look for.
 
-**Description:** A local CI runner intended to execute GitHub Actions workflows at git hooks inside a capability-limited Wasm sandbox. The latest substantive commit reorganized the project into a 16-crate Cargo workspace with command dispatch and engine/sandbox scaffolds. An early v0.0.2 release exists, but the current workspace is not evidence of a complete runner.
+**Description:** A local CI runner intended to execute GitHub Actions workflows inside explicit execution boundaries, with git-hook integration planned. The current Rust workspace has typed CLI parsing, shared types, and CLI contract tests, but all eleven operational command paths report not implemented and exit unsuccessfully. The GHA frontend and execution crates remain scaffolds; the historical v0.0.2 release does not establish a working current runner.
 
 **Key features to build:**
 
@@ -49,7 +49,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** Compile-time infrastructure validation and provider-independent resource modeling demonstrate Rust type-system depth and platform engineering design.
 
-**Description:** A Rust Infrastructure-from-Code framework with a vic CLI, abstract resource graph, and planned cloud-provider drivers. The README explicitly labels it planning and early development; v0.0.5 is an early release. It is not a VS Code editing extension.
+**Description:** A planned Rust Infrastructure-from-Code framework with an early vic CLI. Current code provides version/info commands and a Validate command that prints a mock message; no resource graph, compile-time validation, or provider drivers are implemented. The v0.0.5 release packages this early scaffold.
 
 **Key features to build:**
 
@@ -71,7 +71,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** A zero-config Rust SDK for generating idiomatic language bindings via proc macros — directly signals deep Rust internals knowledge (macros, IR design, FFI) and positions you as an ecosystem builder in the interop space.
 
-**Description:** An annotated-Rust binding SDK organized into SDK, CLI, adapter, core, macro, shared-type, and Python/Node/WASI crates, plus xtask. The README describes the export annotation and adapter contracts; treat complete cross-language generation as work to validate rather than a shipped guarantee.
+**Description:** An annotated-Rust binding SDK scaffold organized into SDK, CLI, adapter, core, macro, shared-type, and Python/Node/WASI crates, plus xtask. The export macro currently returns its input unchanged, the core is a placeholder, and language adapters use todo! for bridge generation. CI checks the workspace, but complete cross-language generation is not implemented.
 
 **Key features to build:**
 
@@ -87,13 +87,13 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 ## 4. pyrs
 
-**Status:** `idea` ~~in-progress~~ ~~done~~
+**Status:** [`idea`](https://github.com/carlosferreyra/pyrs) ~~in-progress~~ ~~done~~
 
 **Stack:** Rust, tree-sitter, Python type system, syn
 
 **Career signal:** A Python→Rust source transpiler is among the most technically ambitious compiler projects in open source — signals deep knowledge of AST design, type inference, and Rust's ownership model, directly distinguishing you from generalist candidates.
 
-**Description:** A source-to-source transpiler that converts Mypy-annotated Python to idiomatic Rust. Uses tree-sitter for parsing, applies local dataflow analysis to infer types for unannotated variables, and emits Rust with ownership and lifetime annotations. Targets a practical subset: functions, structs, basic control flow, and common stdlib patterns.
+**Description:** Proposed source-to-source transpiler from Mypy-annotated Python to idiomatic Rust. Quickstart setup completed on 2026-11-06: the public repository was created, cloned locally, and registered in T3 as pyrs. Initial commit 2546afa contains only a minimal README; no implementation, scaffold, tests, or CI exists yet, so implementation status remains idea. Planned scope: tree-sitter parsing, local dataflow type inference, and Rust emission with ownership/lifetime heuristics for functions, structs, basic control flow, and common stdlib patterns.
 
 **Key features to build:**
 
@@ -113,7 +113,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Stack:** Rust, GCP Cloud Run, Pub/Sub, Terraform
 
-**Career signal:** Extends an existing shipped project with a cloud backend — demonstrates full-cycle ownership from CLI to distributed infra, directly relevant to SRE/platform roles.
+**Career signal:** A cloud backend for the in-progress wsr project would demonstrate ownership from CLI to distributed infrastructure, relevant to SRE/platform roles.
 
 **Description:** A cloud companion to [wsr](https://github.com/ectorial/wsr) (currently in-progress) that streams CI results to a GCP-hosted dashboard in real time. Workers run on Cloud Run, results land in BigQuery, and a simple UI shows run history. Ties directly into GCP Associate Cloud Engineer cert.
 
@@ -209,13 +209,13 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** Extending repository architecture visualization into the editor demonstrates tooling integration and continuity of ownership.
 
-**Description:** A proposed editor integration for CodeTwin that surfaces repository architecture visualizations and navigation from its CodeModel. The published v2 core is a scaffold whose drivers currently produce empty models; this extension should follow a working source-to-model-to-visualization path.
+**Description:** A proposed editor integration for CodeTwin that surfaces repository architecture visualizations and navigation. The core now inspects Rust workspace packages and declared local dependencies and generates linked Markdown pages, but source-symbol parsing and legacy language drivers remain scaffolded. Editor source navigation still depends on meaningful symbol/location models.
 
 **Key features to build:**
 
 - Expose source symbols and relationships through an LSP server
 - Link editor locations to generated architecture visualizations
-- Build a VS Code client after the core driver produces meaningful models
+- Build a VS Code client after the core produces meaningful source-symbol and location models
 
 **Estimated effort:** L
 
@@ -327,7 +327,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** Being the go-to curator for a fast-growing tool (uv) builds mindshare before the ecosystem saturates. Awesome lists consistently rank well in search.
 
-**Description:** A maintained, data-driven catalog of Python CLI tools runnable through uvx/pipx. The current README lists 107 tools across 18 categories; tools.json, a contribution guide, validation/sync CI, and generated README updates are already present. Recent work expanded the catalog and changed README synchronization.
+**Description:** A maintained, data-driven catalog of Python CLI tools runnable through uvx/pipx. tools.json, contribution guidance, generated documentation, maintenance regression tests, metadata synchronization, and catalog/install-validation workflows are present. Successful catalog CI and selected install checks do not certify every listed tool across runtimes.
 
 **Key features to build:**
 
@@ -467,13 +467,13 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** Repository analysis and visualization combine language tooling, graph modeling, and developer experience.
 
-**Description:** A language-agnostic CLI for repository visual documentation. The published v2 README explicitly says architecture scaffold: the binary runs, but drivers produce empty CodeModels. Workspace and IR extraction commits establish ongoing implementation, not completed analysis.
+**Description:** A repository visual-documentation CLI with a working first slice for Rust workspaces: Cargo metadata inspection of packages and declared local dependencies, plus a Markdown overview and linked crate pages. Integration tests cover meaningful models, generated links, isolated packages, and protection of user-authored files. Deeper source parsing and legacy language drivers remain scaffolded; current workspace publication and wrapper availability are not established by historical releases.
 
 **Key features to build:**
 
-- Implement a real source-language driver
-- Render useful repository-overview and architecture-map visualizations
-- Verify model snapshots and architecture diffs against source fixtures
+- Extend beyond Cargo manifest metadata to real source-language analysis
+- Extend workspace visualizations with meaningful source symbols and relationships
+- Maintain fixture-backed model snapshots, architecture diffs, and generated-file safety
 
 **Estimated effort:** L
 
@@ -533,7 +533,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** Reusable project infrastructure demonstrates engineering consistency across multiple Rust products.
 
-**Description:** An existing cargo-generate workspace template with xtask development automation, hooks, and documented template configuration. July commits fixed command wrappers and generated-CLI test behavior; October activity includes dependency maintenance.
+**Description:** An existing cargo-generate workspace template with xtask automation, dependency/action resolution hooks, and optional CLI/CI/docs scaffolding. Generation failure-path tests and a generated-template CI workflow exist. The local checkout differs from the audited remote head; this review inspected code and CI evidence but did not freshly generate and compile a disposable project, so full scaffold conformance remains unverified.
 
 **Key features to build:**
 
@@ -555,7 +555,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** A shipped native CLI with multiple distribution entrypoints demonstrates packaging and delivery.
 
-**Description:** A released Rust CLI business card with interactive and non-interactive modes, runtime resume metadata refresh, and an embedded offline fallback. GitHub release v1.2.15 and documented cargo/uvx/bunx entrypoints establish a shipped core deliverable; ongoing maintenance continues.
+**Description:** A shipped Rust CLI business card with interactive and non-interactive modes, runtime resume metadata refresh, and an embedded offline fallback. The latest inspected GitHub release is v1.2.17 with binary/distribution assets; source tests cover resume filtering, fallback, URLs, and update behavior. cargo/uvx/bunx entrypoints are documented, but the latest sampled npm/PyPI jobs were skipped and fresh end-to-end wrapper installation was not tested in this audit.
 
 **Maintenance:**
 
@@ -576,7 +576,7 @@ Last reviewed against GitHub on 2026-10-04: personal repositories, eight organiz
 
 **Career signal:** A working sandboxed action library would provide a practical validation target for the wsr ecosystem.
 
-**Description:** Proposed reusable WASI actions and a conformance fixture suite for wsr. ectorial/actions currently contains only a LICENSE and an initial commit, so the organization description is a direction rather than evidence of implemented actions.
+**Description:** Proposed reusable WASI actions and a conformance fixture suite for wsr. The linked ectorial/actions repository returned authenticated 404s during this audit, so its current contents cannot be verified; the earlier LICENSE-only observation is historical evidence only. No implementation of this idea was established.
 
 **Key features to build:**
 

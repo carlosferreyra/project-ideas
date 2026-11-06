@@ -4,6 +4,9 @@ on:
   push:
     paths:
       - projects.json
+      - README.md.j2
+      - scripts/sync_readme.py
+      - scripts/render_html.py
 
 jobs:
   sync:
@@ -20,4 +23,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore: sync README from projects.json'
-          file_pattern: README.md
+          file_pattern: README.md README.html

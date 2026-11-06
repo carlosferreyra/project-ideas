@@ -11,6 +11,8 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
+from render_html import render_html
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Render README.md from a Jinja2 template and projects JSON.")
@@ -30,7 +32,9 @@ def main() -> None:
     rendered = template.render(**data)
 
     args.output.write_text(rendered)
-    print(f"Written to {args.output}")
+    html_output = args.output.with_suffix(".html")
+    html_output.write_text(render_html(rendered, data["meta"]["last_updated"]))
+    print(f"Written to {args.output} and {html_output}")
 
 
 if __name__ == "__main__":
